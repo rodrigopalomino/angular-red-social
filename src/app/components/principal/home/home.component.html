@@ -1,0 +1,39 @@
+<div class="body">
+  <div class="pagina">
+    <div class="c-izquierda">
+      <div class="c-usuario">version 2:{{ username }}</div>
+
+      <div class="c-opciones">
+        <button
+          [routerLink]="[
+            { outlets: { primary: ['chat'], pageContent: ['page-chat'] } }
+          ]"
+        >
+          Chat
+        </button>
+        <button
+          [routerLink]="[
+            {
+              outlets: {
+                primary: ['publicaciones'],
+                pageContent: ['page-publicaciones']
+              }
+            }
+          ]"
+        >
+          Post
+        </button>
+        <button (click)="createPost()">Crear Post</button>
+        <button (click)="CerrarSesion()">Cerrar Sesion</button>
+      </div>
+
+      <div class="c-busqueda">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+
+    <div class="c-derecha">
+      <router-outlet name="pageContent"></router-outlet>
+    </div>
+  </div>
+</div>

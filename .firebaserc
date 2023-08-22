@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "red-social-aa51a": {
+      "hosting": {
+        "firebase": [
+          "red-social-aa51a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "red-social-b11c9"
+  }
+}

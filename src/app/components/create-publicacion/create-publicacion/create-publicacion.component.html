@@ -1,0 +1,12 @@
+<div class="body">
+  <div class="createPost">
+    <form action="" [formGroup]="form" (ngSubmit)="submit()">
+      <label for="">titulo</label>
+      <input type="text" placeholder="titulo" formControlName="titulo" />
+      <label for="">contenido</label>
+      <textarea cols="30" rows="10" formControlName="contenido"></textarea>
+      <button>crear Post</button>
+      <a class="a" (click)="volver()">volver</a>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="body">
+  <div class="cuadro">
+    <form class="form" [formGroup]="form" (ngSubmit)="submit()">
+      <div class="form__titulo">
+        <p>Registro</p>
+      </div>
+      <div class="form__grupo">
+        <div class="form__grupo-input">
+          <i class="bi bi-person-fill"></i>
+          <input
+            type="text"
+            placeholder="Usuario"
+            formControlName="username"
+            (input)="resetError($event)"
+          />
+        </div>
+        <small>{{ usernameValid }}</small>
+        <small>{{ error }}</small>
+      </div>
+
+      <div class="form__grupo">
+        <div class="form__grupo-input">
+          <i class="bi bi-lock-fill"></i>
+          <input
+            type="password"
+            placeholder="Passoword"
+            formControlName="password"
+          />
+        </div>
+        <small>{{ passwordValid }}</small>
+      </div>
+
+      <div class="form__grupo">
+        <div class="form__grupo-input">
+          <i class="bi bi-lock-fill"></i>
+          <input
+            type="password"
+            placeholder="Repetir Password"
+            formControlName="password2"
+          />
+        </div>
+        <small>{{ password2Valid }}</small>
+      </div>
+
+      <div class="form__button">
+        <button>Aceptar</button>
+        <a href="/login">regresar</a>
+      </div>
+    </form>
+  </div>
+</div>

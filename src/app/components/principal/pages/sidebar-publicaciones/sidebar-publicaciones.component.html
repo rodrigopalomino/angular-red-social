@@ -1,0 +1,36 @@
+<div class="body">
+  <div
+    class="publicacion"
+    *ngFor="let publicacion of publicaciones"
+    (click)="postId(publicacion.post_id)"
+  >
+    <div class="contenido">
+      <span class="titulo">{{ publicacion.titulo }}</span>
+      <span>creada por: {{ publicacion.usuario.username }}</span>
+      <span>fecha {{ publicacion.createdAt }}:</span>
+    </div>
+    <div class="cantidad-likes">
+      <div
+        class="cantidad-like"
+        (click)="incrementLike(publicacion.post_id || 0)"
+      >
+        <i
+          class="bi bi-hand-thumbs-up"
+          [ngClass]="{ likes: isLiked(publicacion.post_id || 0) }"
+        ></i>
+        <span>{{ publicacion.cantidad_likes }}</span>
+      </div>
+
+      <div
+        class="cantidad-like"
+        (click)="incrementdisLike(publicacion.post_id || 0)"
+      >
+        <i
+          class="bi bi-hand-thumbs-down"
+          [ngClass]="{ dislikes: isDisliked(publicacion.post_id || 0) }"
+        ></i>
+        <span>{{ publicacion.cantidad_dislikes }}</span>
+      </div>
+    </div>
+  </div>
+</div>

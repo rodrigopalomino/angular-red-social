@@ -1,0 +1,77 @@
+.body {
+  background: white;
+  width: 100%;
+  height: 100%;
+  border-top: 1px solid black;
+  overflow-y: scroll;
+}
+
+.publicacion {
+  border-bottom: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.publicacion:hover {
+  /* Agrega aquí los estilos que deseas aplicar cuando se hace clic */
+  background-color: lightgray;
+  border: 1px solid gray;
+}
+
+.p-activa {
+  background-color: lightgray;
+  border: 1px solid gray;
+}
+
+.contenido {
+  /* border: 1px solid red; */
+  width: 70%;
+  height: 100%;
+  padding-left: 15px;
+}
+
+.contenido span {
+  display: block;
+}
+
+.cantidad-likes {
+  /* border: 1px solid blue; */
+  width: 30%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.cantidad-like {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cantidad-like i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  color: black;
+}
+
+.cantidad-like i.likes {
+  background: #0e74f4;
+  color: white;
+  border: none;
+}
+
+.cantidad-like i.dislikes {
+  background: red;
+  color: white;
+  border: none;
+}

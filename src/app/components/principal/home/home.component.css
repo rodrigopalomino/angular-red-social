@@ -1,0 +1,42 @@
+.body {
+  height: 100vh;
+  background: linear-gradient(to right, #075cf8, #ce1d61);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagina {
+  width: 90vw;
+  height: 90vh;
+  display: flex;
+}
+
+.c-izquierda {
+  /* border: 1px solid black; */
+  width: 30%;
+}
+
+.c-usuario {
+  background: white;
+  height: 5%;
+  /* border: 5px solid red; */
+}
+
+.c-opciones {
+  height: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+}
+
+.c-busqueda {
+  height: 90%;
+}
+
+.c-derecha {
+  background: #e3dad3;
+  /* background: blue; */
+  width: 70%;
+}

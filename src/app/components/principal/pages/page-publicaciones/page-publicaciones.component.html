@@ -1,0 +1,75 @@
+<!-- <div class="body">
+  <div class="titulo">
+    <h1>{{ publicacion.titulo }}</h1>
+  </div>
+
+  <div class="creador">
+    <p>{{ publicacion.username }}</p>
+  </div>
+
+  <div class="contenido">
+    <p>{{ publicacion.contenido }}</p>
+  </div>
+
+  <button
+    *ngIf="publicacion == '' ? false : true"
+    (click)="verComentarios(publicacion.post_id)"
+  >
+    Ver comentarios
+  </button>
+
+  <div *ngIf="vC">
+    <div *ngFor="let comentario of comentarios">
+      <p>{{ comentario.contenido }}</p>
+    </div>
+  </div>
+</div> -->
+
+<div class="body">
+  <div class="page">
+    <div class="page-titulo">
+      <h1>{{ publicacion.titulo }}</h1>
+    </div>
+    <div class="page-contenido">
+      <p>{{ publicacion.contenido }}</p>
+    </div>
+    <div class="page-info" *ngIf="publicacion == '' ? false : true">
+      <p>Publicado por: {{ publicacion.usuario.username }}</p>
+      <p>Fecha: {{ publicacion.createdAt }}</p>
+    </div>
+
+    <div class="page-button">
+      <button
+        *ngIf="publicacion == '' ? false : true"
+        (click)="verComentarios(publicacion.post_id)"
+      >
+        Ver comentarios
+      </button>
+    </div>
+
+    <div *ngIf="Bcomentarios">
+      <div class="page-comentario" *ngFor="let comentario of comentarios">
+        <div class="comentario-grupo">
+          <span class="comentario-username">{{
+            comentario.usuario.username
+          }}</span>
+          <span class="comentario-fecha">{{ comentario.createdAt }}</span>
+        </div>
+        <p>{{ comentario.contenido }}</p>
+      </div>
+    </div>
+  </div>
+  <form
+    (ngSubmit)="agregarComentario()"
+    [formGroup]="form"
+    class="comentario"
+    *ngIf="publicacion == '' ? false : true"
+  >
+    <input
+      type="text"
+      placeholder="Agrega un comentario"
+      formControlName="comentario"
+    />
+    <button>Comentar</button>
+  </form>
+</div>

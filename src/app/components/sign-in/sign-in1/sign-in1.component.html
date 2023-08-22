@@ -1,0 +1,105 @@
+<div class="body">
+  <div class="cuadro">
+    <form class="form" [formGroup]="form" (ngSubmit)="siguiente()">
+      <div class="form__titulo">
+        <p>Registro</p>
+      </div>
+      <div class="form__grupo">
+        <div class="form__grupo-input">
+          <i class="bi bi-person-fill"></i>
+          <input type="text" placeholder="Nombre" formControlName="name" />
+        </div>
+        <small>{{ nameValid }}</small>
+      </div>
+
+      <div class="form__grupo">
+        <div class="form__grupo-input">
+          <i class="bi bi-person-fill"></i>
+          <input
+            type="text"
+            placeholder="Apellido"
+            formControlName="lastname"
+          />
+        </div>
+        <small>{{ lastname }}</small>
+      </div>
+
+      <div class="form__grupo-fecha">
+        <div class="form__grupo-input-fecha">
+          <input type="text" placeholder="Dia" formControlName="dia" />
+          <select name="" id="" formControlName="mes">
+            <option value="0" disabled selected>Mes</option>
+            <option value="01">Enero</option>
+            <option value="02">Febrero</option>
+            <option value="03">Marzo</option>
+            <option value="04">Abril</option>
+            <option value="05">Mayo</option>
+            <option value="06">Junio</option>
+            <option value="07">Julio</option>
+            <option value="08">Agosto</option>
+            <option value="09">Septiembre</option>
+            <option value="10">Octubre</option>
+            <option value="11">Noviembre</option>
+            <option value="12">Diciembre</option>
+          </select>
+          <input type="text" placeholder="Año" formControlName="año" />
+        </div>
+        <small>{{ fechaValid }}</small>
+      </div>
+
+      <div class="form__button">
+        <button>Siguiente</button>
+        <a routerLink="/login">Volver</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- <div class="containers">
+  <form class="login" [formGroup]="form" (ngSubmit)="siguiente()">
+    <span class="titulo">Registrarse</span>
+
+    <div class="login-inputs">
+      <div class="login-input">
+        <div class="input-icon">
+          <i class="bi bi-person-fill"></i>
+        </div>
+        <input type="text" placeholder="Name" formControlName="name" />
+      </div>
+      <small>{{ nameValid }}</small>
+
+      <div class="login-input">
+        <div class="input-icon">
+          <i class="bi bi-lock-fill"></i>
+        </div>
+        <input type="text" placeholder="Lastname" formControlName="lastname" />
+      </div>
+      <small>{{ lastname }}</small>
+
+      <div class="login-nacimiento">
+        <input type="text" placeholder="Dia" formControlName="dia" />
+        <select name="" id="" formControlName="mes">
+          <option value="0" disabled selected>Mes</option>
+          <option value="01">Enero</option>
+          <option value="02">Febrero</option>
+          <option value="03">Marzo</option>
+          <option value="04">Abril</option>
+          <option value="05">Mayo</option>
+          <option value="06">Junio</option>
+          <option value="07">Julio</option>
+          <option value="08">Agosto</option>
+          <option value="09">Septiembre</option>
+          <option value="10">Octubre</option>
+          <option value="11">Noviembre</option>
+          <option value="12">Diciembre</option>
+        </select>
+        <input type="text" placeholder="Año" formControlName="año" />
+      </div>
+      <small>{{ fechaValid }}</small>
+    </div>
+    <div class="login-boton">
+      <button>Siguiente</button>
+    </div>
+    <a routerLink="/login">regresar</a>
+  </form>
+</div> -->
