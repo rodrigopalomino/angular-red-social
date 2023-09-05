@@ -9,6 +9,8 @@ import { SidebarPublicacionesComponent } from './pages/sidebar-publicaciones/sid
 import { PagePublicacionesComponent } from './pages/page-publicaciones/page-publicaciones.component';
 import { PageChatComponent } from './pages/page-chat/page-chat.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SidebarGeneralComponent } from './pages/sidebar-general/sidebar-general.component';
+import { PageGeneralComponent } from './pages/page-general/page-general.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     SidebarPublicacionesComponent,
     PagePublicacionesComponent,
     PageChatComponent,
+    SidebarGeneralComponent,
+    PageGeneralComponent,
   ],
   imports: [CommonModule, PrincipalRoutingModule, ReactiveFormsModule],
 })

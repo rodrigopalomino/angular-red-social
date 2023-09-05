@@ -36,7 +36,7 @@ export class SidebarPublicacionesComponent implements OnInit {
     const get = this._LikeServices
       .getLikes(this.user_id || 0)
       .subscribe((data) => {
-        this.likes = data.item;
+        this.likes = data;
       });
   }
 
@@ -44,7 +44,7 @@ export class SidebarPublicacionesComponent implements OnInit {
     const get = this._LikeServices
       .getDislikes(this.user_id || 0)
       .subscribe((data) => {
-        this.dislikes = data.item;
+        this.dislikes = data;
       });
   }
 
@@ -58,21 +58,21 @@ export class SidebarPublicacionesComponent implements OnInit {
 
   getPost() {
     this._publicacionServices.getPublicaciones().subscribe((data) => {
-      this.publicaciones = data.items;
+      this.publicaciones = data;
 
       this.publicaciones.forEach((publicacion) => {
         const fecha = parseISO(publicacion.createdAt || 'a');
         publicacion.createdAt = format(fecha, 'yyyy-MM-dd');
       });
-
-      console.log(this.publicaciones);
-      console.log('dasd : ', this.publicaciones[0].usuario);
     });
   }
 
   postId(postId: number | undefined) {
+    console.log(postId);
+    console.log(this.publicaciones[this.publicaciones.length - (postId || 0)]);
+
     this._publicacionServices.disparadorPostId.emit({
-      data: this.publicaciones[(postId || 0) - 1],
+      data: this.publicaciones[this.publicaciones.length - (postId || 0)],
     });
 
     this._publicacionServices.pasarID.emit({
@@ -87,7 +87,7 @@ export class SidebarPublicacionesComponent implements OnInit {
 
   incrementLike(post_id: number) {
     console.log('user_id: ', this.user_id);
-    console.log('post_id: ', post_id);
+    console.log('1.post_id: ', post_id);
 
     const like: Like = {
       user_id: this.user_id || 0,

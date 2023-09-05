@@ -5,7 +5,8 @@ import { SidebarChatComponent } from './pages/sidebar-chat/sidebar-chat.componen
 import { SidebarPublicacionesComponent } from './pages/sidebar-publicaciones/sidebar-publicaciones.component';
 import { PageChatComponent } from './pages/page-chat/page-chat.component';
 import { PagePublicacionesComponent } from './pages/page-publicaciones/page-publicaciones.component';
-import { CreatePublicacionComponent } from '../create-publicacion/create-publicacion/create-publicacion.component';
+import { SidebarGeneralComponent } from './pages/sidebar-general/sidebar-general.component';
+import { PageGeneralComponent } from './pages/page-general/page-general.component';
 
 const routes: Routes = [
   {
@@ -21,13 +22,22 @@ const routes: Routes = [
         component: SidebarPublicacionesComponent,
       },
       {
-        path: 'page-chat', // Cambia el path para el componente PageChatComponent
+        path: 'general',
+        component: SidebarGeneralComponent,
+      },
+      {
+        path: 'page-chat',
         component: PageChatComponent,
         outlet: 'pageContent',
       },
       {
-        path: 'page-publicaciones', // Cambia el path para el componente PagePublicacionesComponent
+        path: 'page-publicaciones',
         component: PagePublicacionesComponent,
+        outlet: 'pageContent',
+      },
+      {
+        path: 'page-general',
+        component: PageGeneralComponent,
         outlet: 'pageContent',
       },
     ],

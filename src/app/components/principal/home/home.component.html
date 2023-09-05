@@ -1,9 +1,16 @@
 <div class="body">
   <div class="pagina">
     <div class="c-izquierda">
-      <div class="c-usuario">version 2:{{ username }}</div>
+      <div class="c-usuario">version 4:{{ username }}</div>
 
       <div class="c-opciones">
+        <button
+          [routerLink]="[
+            { outlets: { primary: ['general'], pageContent: ['page-general'] } }
+          ]"
+        >
+          general
+        </button>
         <button
           [routerLink]="[
             { outlets: { primary: ['chat'], pageContent: ['page-chat'] } }

@@ -1,0 +1,49 @@
+.body {
+  height: 100%;
+  width: 100%;
+}
+
+.mensajes {
+  height: 92%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 60px;
+  align-items: flex-start;
+  overflow-y: scroll;
+}
+
+.mensaje {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  margin-top: 20px;
+  padding: 10px;
+  max-width: 250px;
+  width: auto;
+}
+
+.mio {
+  background: green;
+  align-self: flex-end;
+}
+
+.form {
+  height: 7.3%;
+  width: 63%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  border-top: 1px solid white;
+}
+
+.form input {
+  width: 80%;
+  height: 40px;
+}
+
+.form button {
+  height: 40px;
+}

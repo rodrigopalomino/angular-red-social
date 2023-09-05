@@ -61,23 +61,21 @@ export class PagePublicacionesComponent implements OnInit {
     this._comentarioServices.createComent(comentario).subscribe({
       next: (res: any) => {
         console.log(res);
-        console.log('comentario agregado');
+
         this.verComentarios(this.post_id.toString());
       },
       error: (e: HttpErrorResponse) => {
         console.log(e);
       },
     });
-
-    console.log('comentario agregado');
   }
 
   getPublicacion() {
     this._publicacionServices.disparadorPostId.subscribe((data) => {
       this.publicacion = data.data;
-      console.log('aca', data);
+
       this.post_id = data.data.post_id;
-      console.log('post_id : ', this.post_id);
+
       this.vC = false;
       this.Bcomentarios = false;
     });
@@ -85,9 +83,8 @@ export class PagePublicacionesComponent implements OnInit {
 
   verComentarios(post_id: string) {
     this._comentarioServices.getCometarios(post_id).subscribe((data) => {
-      this.comentarios = data.comentarios;
+      this.comentarios = data;
       this.Bcomentarios = true;
-      console.log('aca .', this.comentarios);
     });
 
     this.vC = true;

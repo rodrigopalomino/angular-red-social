@@ -11,8 +11,8 @@ export class UserService {
   private myApiUrl: string;
 
   constructor(private http: HttpClient) {
-    // this.myAppUrl = 'http://localhost:3000/';
-    this.myAppUrl = 'https://nodejs-red-social-production.up.railway.app/';
+    this.myAppUrl = 'http://localhost:3000/';
+    // this.myAppUrl = 'https://nodejs-red-social-production.up.railway.app/';
     this.myApiUrl = 'user';
   }
 

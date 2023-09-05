@@ -15,15 +15,13 @@ export class PublicacionService {
   private myApiUrl: string;
 
   constructor(private http: HttpClient) {
-    this.myAppUrl = 'https://nodejs-red-social-production.up.railway.app/';
-    // this.myAppUrl = 'http://localhost:3000/';
+    // this.myAppUrl = 'https://nodejs-red-social-production.up.railway.app/';
+    this.myAppUrl = 'http://localhost:3000/';
     this.myApiUrl = 'post';
   }
 
-  getPublicaciones(): Observable<{ items: Publicacion[]; status: number }> {
-    return this.http.get<{ items: Publicacion[]; status: number }>(
-      `${this.myAppUrl}${this.myApiUrl}`
-    );
+  getPublicaciones(): Observable<Publicacion[]> {
+    return this.http.get<Publicacion[]>(`${this.myAppUrl}${this.myApiUrl}`);
   }
 
   createPublicacion(publicacion: Publicacion): Observable<Publicacion> {

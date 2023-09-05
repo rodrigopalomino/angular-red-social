@@ -1,0 +1,27 @@
+<div class="body">
+  <div class="mensajes">
+    <div class="mensaje">
+      <span>Usuario</span>
+      <span>mensaje1</span>
+    </div>
+
+    <div
+      class="mensaje"
+      #mensajesContainer
+      *ngFor="let mensaje of mensajes"
+      [ngClass]="{ mio: user_id == mensaje.user_id }"
+    >
+      <span>{{ mensaje.usuario?.username }}</span>
+      <span>{{ mensaje.contenido }}</span>
+    </div>
+  </div>
+
+  <form class="form" [formGroup]="form" (ngSubmit)="createGeneral()">
+    <input
+      type="text"
+      placeholder="Escribe un mensaje"
+      formControlName="mensaje"
+    />
+    <button>Enviar</button>
+  </form>
+</div>

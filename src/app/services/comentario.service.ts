@@ -11,15 +11,13 @@ export class ComentarioService {
   private myApiUrl: string;
 
   constructor(private http: HttpClient) {
-    this.myAppUrl = 'https://nodejs-red-social-production.up.railway.app/';
-    // this.myAppUrl = 'http://localhost:3000/';
+    // this.myAppUrl = 'https://nodejs-red-social-production.up.railway.app/';
+    this.myAppUrl = 'http://localhost:3000/';
     this.myApiUrl = 'coment';
   }
 
-  getCometarios(
-    post_id: string
-  ): Observable<{ comentarios: Comentario[]; status: number }> {
-    return this.http.get<{ comentarios: Comentario[]; status: number }>(
+  getCometarios(post_id: string): Observable<Comentario[]> {
+    return this.http.get<Comentario[]>(
       `${this.myAppUrl}${this.myApiUrl}/${post_id}`
     );
   }
